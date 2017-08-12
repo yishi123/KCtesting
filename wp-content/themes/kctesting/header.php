@@ -23,12 +23,23 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'kctesting' ); ?></a>
-
+             <?php if ( get_header_image() ) : ?>
+        
+        <figure class="header_image">    
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+	</a>
+        </figure>
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) : ?>
+		
+        
+   
+	<?php endif; // End header image check. ?>
+            
+            <div class="site-branding">
+			<?php  the_custom_logo(); ?>
+                <div class="site-branding-text"  >
+                 <?php	if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
@@ -40,8 +51,9 @@
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 			endif; ?>
+                </div>
 		</div><!-- .site-branding -->
-
+<!--
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'kctesting' ); ?></button>
 			<?php
@@ -50,7 +62,11 @@
 					'menu_id'        => 'primary-menu',
 				) );
 			?>
-		</nav><!-- #site-navigation -->
+		</nav> #site-navigation -->
+                
+     
+          
+                
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

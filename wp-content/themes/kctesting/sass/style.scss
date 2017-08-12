@@ -3,7 +3,7 @@ Theme Name: knight center
 Theme URI: http://underscores.me/
 Author: yishi
 Author URI: http://underscores.me/
-Description: Description
+Description: Theme fors Knight Center Institution Site. 
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -86,16 +86,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "modules/clearings";
 
 /*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "site/secondary/widgets";
-
-/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 @import "site/site";
 
 /*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+
 # Infinite scroll
 --------------------------------------------------------------*/
 @import "modules/infinite-scroll";

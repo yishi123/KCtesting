@@ -90,6 +90,8 @@ add_action( 'after_setup_theme', 'kctesting_setup' );
  *
  * @global int $content_width
  */
+
+
 function kctesting_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'kctesting_content_width', 640 );
 }
@@ -117,6 +119,10 @@ add_action( 'widgets_init', 'kctesting_widgets_init' );
  * Enqueue scripts and styles.
  */
 function kctesting_scripts() {
+    
+   //Enqueue Google fonts: source sans pro and pr serif 
+    wp_enqueue_style('kctesting_style', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|Source+Sans+Pro:400,400i,600i,900' );
+    
 	wp_enqueue_style( 'kctesting-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'kctesting-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
